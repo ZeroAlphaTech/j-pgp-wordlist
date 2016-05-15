@@ -310,6 +310,8 @@ public final class PGPWordList {
      */
     private void addPGPWords(final int hexValue, final PGPWords pgpWords) {
         PGP_WORDS_BY_HEX_VALUE.put(hexValue, pgpWords);
+
+        // Lower case the words so that we can do a case-insensitive reverse lookup
         HEX_VALUE_BY_PGP_WORD.put(pgpWords.getEvenWord().toLowerCase(), hexValue);
         HEX_VALUE_BY_PGP_WORD.put(pgpWords.getOddWord().toLowerCase(), hexValue);
     }
@@ -321,6 +323,11 @@ public final class PGPWordList {
      * @return Hex value associated with provided word
      */
     public Integer getHexValueByPGPWord(final String pgpWord) {
+        if (pgpWord == null) {
+            return null;
+        }
+
+        // Lower-case the word to perform the lookup
         return HEX_VALUE_BY_PGP_WORD.get(pgpWord.toLowerCase());
     }
 
