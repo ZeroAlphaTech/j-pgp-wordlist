@@ -62,6 +62,28 @@ public class PGPWordListConverter {
     }
 
     /**
+     * Retrieve the hexadecimal value associated with the provided PGP Word. Method returns a String representation of
+     * the hex number, without a leading 0x.
+     *
+     * @param pgpWord PGP Word to get hex value for
+     * @return Hexadecimal value associated with word, represented as a String
+     *
+     * @throws InvalidPGPWordException If word is not valid/recognised
+     */
+    public String getHexValueForPGPWord(final String pgpWord) throws InvalidPGPWordException {
+        if (pgpWord == null) {
+            throw new InvalidPGPWordException("Cannot convert null to hexadecimal value");
+        }
+
+        final Integer hexValue = PGP_WORD_LIST.getHexValueByPGPWord(pgpWord);
+        if (hexValue == null) {
+            throw new InvalidPGPWordException(String.format("PGP Word not recognised: %s", pgpWord));
+        } else {
+            return Integer.toHexString(hexValue).toUpperCase();
+        }
+    }
+
+    /**
      * Convert a provided String representation of a hexadecimal value into an integer. If the String cannot be
      * converted, or the value is too large (i.e. > 0xFF), an {@link InvalidHexValueException} is thrown.
      *

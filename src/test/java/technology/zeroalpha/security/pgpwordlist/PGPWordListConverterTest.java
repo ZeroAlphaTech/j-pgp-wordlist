@@ -184,4 +184,55 @@ public class PGPWordListConverterTest {
 
         // then
     }
+
+    /**
+     * Ensure that calls to {@link PGPWordListConverter#getHexValueForPGPWord(String)} returns the correct hexadecimal
+     * value, represented as a string (without a leading '0x'.
+     *
+     * @throws InvalidPGPWordException Exception thrown by method
+     */
+    @Test
+    public void getHexValueForPGPWord_returns_correct_hex_value() throws InvalidPGPWordException {
+        // given
+
+        // when
+        final String hexValue = converterUnderTest.getHexValueForPGPWord("resistor");
+
+        // then
+        assertEquals("C5", hexValue); // 'resistor' is word assciated with 0xC5
+    }
+
+    /**
+     * Ensure that calls to {@link PGPWordListConverter#getHexValueForPGPWord(String)} throws an
+     * {@link InvalidPGPWordException} if provided parameter is null.
+     *
+     * @throws InvalidPGPWordException Exception thrown by method
+     */
+    @Test (expected = InvalidPGPWordException.class)
+    public void getHexValueForPGPWord_throws_InvalidPGPWordException_if_parameter_is_null()
+            throws InvalidPGPWordException {
+        // given
+
+        // when
+        converterUnderTest.getHexValueForPGPWord(null);
+
+        // then
+    }
+
+    /**
+     * Ensure that calls to {@link PGPWordListConverter#getHexValueForPGPWord(String)} throws an
+     * {@link InvalidPGPWordException} if provided string in not a valid PGP word.
+     *
+     * @throws InvalidPGPWordException Exception thrown by method
+     */
+    @Test (expected = InvalidPGPWordException.class)
+    public void getHexValueForPGPWord_throws_InvalidPGPWordException_if_string_is_not_PGP_word()
+            throws InvalidPGPWordException {
+        // given
+
+        // when
+        converterUnderTest.getHexValueForPGPWord("foo");
+
+        // then
+    }
 }
