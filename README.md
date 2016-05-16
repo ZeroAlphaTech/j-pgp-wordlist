@@ -10,7 +10,7 @@ Include the dependency in your `pom.xml` file:
 <dependency>
     <groupId>technology.zeroalpha.security</groupId>
     <artifactId>j-pgp-wordlist</artifactId>
-    <version>0.1.1</version>
+    <version>0.2.0-SNAPSHOT</version>
 </dependency>
 ```
 

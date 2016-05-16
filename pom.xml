@@ -6,9 +6,9 @@
 
     <groupId>technology.zeroalpha.security</groupId>
     <artifactId>j-pgp-wordlist</artifactId>
-    <version>0.1.1</version>
+    <version>0.2.0-SNAPSHOT</version>
 
-    <name>PGP Words</name>
+    <name>Java PGP Wordlist</name>
     <description>Java implementation of PGP Word List</description>
     <url>https://github.com/ZeroAlphaTech/j-pgp-wordlist</url>
 
