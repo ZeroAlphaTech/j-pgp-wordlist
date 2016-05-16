@@ -10,7 +10,7 @@ Include the dependency in your `pom.xml` file:
 <dependency>
     <groupId>technology.zeroalpha.security</groupId>
     <artifactId>j-pgp-wordlist</artifactId>
-    <version>0.1</version>
+    <version>0.1.1</version>
 </dependency>
 ```
 
@@ -29,4 +29,6 @@ Both classes are thread-safe.
 ## Version History
 
 **0.1**: Convert between hexadecimal values and their associated PGP Words.
+
+**0.1.1**: Added project name to POM, as required by Maven Central
 
