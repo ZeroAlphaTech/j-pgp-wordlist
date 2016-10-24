@@ -1,0 +1,6 @@
+java:
+  java_version: 1.8.0-openjdk
+  maven_version: '3.3.3'
+
+tests:
+  - mvn verify
