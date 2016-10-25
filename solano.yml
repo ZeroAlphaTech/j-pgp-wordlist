@@ -3,5 +3,4 @@ java:
   maven_version: '3.3.3'
 
 tests:
-  - name: Run unit tests
-  command: mvn test
+  - mvn test
