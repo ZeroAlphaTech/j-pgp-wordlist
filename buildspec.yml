@@ -1,0 +1,23 @@
+version: 0.1
+
+phases:
+  install:
+    commands:
+      - echo Nothing to do in INSTALL phase
+  pre_build:
+    commands:
+      - echo PRE_BUILD started at `date`
+      - echo Running Unit Tests against code
+      - mvn test
+  build:
+    commands:
+      - echo BUILD started at `date`
+      - mvn package
+  post_build:
+    commands:
+      - echo BUILD completed at `date`
+      - command
+artifacts:
+  files:
+    - target/*.jar
+  discard-paths: yes
